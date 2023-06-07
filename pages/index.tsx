@@ -9,7 +9,7 @@ import { paginationPokemons } from "../utils";
 import { useEffect, useState } from "react";
 
 const metadaData = {
-  title: "Pokedex | Samurai.dev.ord",
+  title: "Pokedex | Samuraior.dev",
   description: "Pokedex realizada con Next.js",
 };
 interface Props {
