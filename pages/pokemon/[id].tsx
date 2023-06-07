@@ -73,8 +73,8 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
             </div>
             <h2>Weakness</h2>
             <div className="image-types">
-              {pokemon.dmg_relations.map((element, index) =>
-                element.map((element2, index2) => (
+              {pokemon.dmg_relations.map((element:any, index: number) =>
+                element.map((element2:any, index2: number) => (
                   <Image
                     key={index2}
                     src={`/icons/${element2.name}.svg`}
