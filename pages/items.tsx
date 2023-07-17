@@ -2,11 +2,11 @@ import { NextPage } from "next";
 import React from "react";
 import { Layout } from "../components";
 const metadaData = {
-  title: "Moves | Pokemon",
+  title: "Items | Pokemon",
   description:
-    "Descripción detallada de los movimientos existentes en el mundo de pokemon",
+    "Descripción detallada de los objetos existentes en el mundo de pokemon",
 };
-const Moves: NextPage = () => {
+const Items: NextPage = () => {
   return (
     <Layout title={metadaData.title} description={metadaData.description}>
       <h1 style={{"textAlign": "center"}}>Pokemon | Moves</h1>
@@ -14,4 +14,4 @@ const Moves: NextPage = () => {
   );
 };
 
-export default Moves;
+export default Items;

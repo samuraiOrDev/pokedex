@@ -93,32 +93,30 @@ export const HeaderPokemon: FC<Props> = ({ pokemon }) => {
                 width={widthHeightForm}
                 height={widthHeightForm}
               />
-              <Image
-                src={
-                  pokemon.sprites.front_female && pokemon.sprites.back_female
-                }
-                alt={pokemon.name}
-                width={widthHeightForm}
-                height={widthHeightForm}
-              />
-              <Image
-                src={
-                  pokemon.sprites.front_female &&
-                  pokemon.sprites.front_shiny_female
-                }
-                alt={pokemon.name}
-                width={widthHeightForm}
-                height={widthHeightForm}
-              />
-              <Image
-                src={
-                  pokemon.sprites.front_female &&
-                  pokemon.sprites.back_shiny_female
-                }
-                alt={pokemon.name}
-                width={widthHeightForm}
-                height={widthHeightForm}
-              />
+              {pokemon.sprites.back_female && (
+                <Image
+                  src={pokemon.sprites.back_female}
+                  alt={pokemon.name}
+                  width={widthHeightForm}
+                  height={widthHeightForm}
+                />
+              )}
+              {pokemon.sprites.front_shiny_female && (
+                <Image
+                  src={pokemon.sprites.front_shiny_female}
+                  alt={pokemon.name}
+                  width={widthHeightForm}
+                  height={widthHeightForm}
+                />
+              )}
+              {pokemon.sprites.back_shiny_female && (
+                <Image
+                  src={pokemon.sprites.back_shiny_female}
+                  alt={pokemon.name}
+                  width={widthHeightForm}
+                  height={widthHeightForm}
+                />
+              )}
             </div>
           )}
         </div>

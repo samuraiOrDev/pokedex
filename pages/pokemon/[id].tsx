@@ -17,7 +17,6 @@ interface Props {
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
   const nametoCapitalize = toCapitalize(pokemon.name);
   const abilities = getFilterAbilities(pokemon);
-  console.log(pokemon);
 
   return (
     <Layout
@@ -48,13 +47,12 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
           </div>
         </div>
         {/* Container-abilities */}
-        <div className="container-abilities border-color-light-off">
+        <div className="container-abilities border-color-light-off" style={{"width": "100%"}}>
           <h2>Abilities</h2>
           <br />
           {abilities.map((ability: any) => (
             <AbilitiesComponent ability={ability} key={ability.id} />
           ))}
-          <h2></h2>
         </div>
         {/* Container-types */}
         <div className="container-pokemon-types-evolutions">
@@ -86,9 +84,9 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
               )}
             </div>
           </div>
-          <div className="container-evolutions border-color-light-off">
+          {/* <div className="container-evolutions border-color-light-off">
             Hola buenas noches
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>
@@ -96,12 +94,12 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const pokemons3 = [...Array(3)].map((value, index) => `${index + 1}`);
+  const pokemonsArray = [...Array(3)].map((value, index) => `${index + 1}`);
   return {
-    paths: pokemons3.map((id) => ({
+    paths: pokemonsArray.map((id) => ({
       params: { id },
     })),
-    // fallback: false
+    //fallback: false
     fallback: "blocking",
   };
 };

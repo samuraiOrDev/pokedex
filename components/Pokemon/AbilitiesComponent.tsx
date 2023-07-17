@@ -25,14 +25,14 @@ export const AbilitiesComponent: FC<Props> = ({ ability }) => {
         <p>
           Description:{" "}
           <span className="color-light-off">
-            {ability.effect_entries[0].effect}
+            {ability.effect_entries[0]?.effect}
           </span>
         </p>
         <p>
           Effect:{" "}
           <span className="color-light-off">
-            {ability.effect_entries[0].short_effect
-              ? ability.effect_entries[0].short_effect
+            {ability.effect_entries[0]?.short_effect
+              ? ability.effect_entries[0]?.short_effect
               : "--"}
           </span>
         </p>
