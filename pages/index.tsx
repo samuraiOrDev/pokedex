@@ -39,9 +39,9 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { data } = await pokeApi.get<SmallPokemon[]>("pokemon");
-  const pokemonPagination = paginationPokemons(data);
+  // const pokemonPagination = paginationPokemons(data);
 
   return {
-    props: { pokemons: pokemonPagination },
+    props: { pokemons: data },
   };
 };
