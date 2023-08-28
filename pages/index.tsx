@@ -2,11 +2,9 @@ import { NextPage } from "next";
 import { GetStaticProps } from "next";
 import { Layout } from "../components";
 import { pokeApi } from "../api";
-import { PokemonListResponse, SmallPokemon } from "../interfaces";
+import { SmallPokemon } from "../interfaces";
 import { PokemonCard } from "../components";
 import { typesPokemons } from "../data/types-pokemon";
-import { paginationPokemons } from "../utils";
-import { useEffect, useState } from "react";
 
 const metadaData = {
   title: "Pokedex | Samuraior.dev",
@@ -39,8 +37,6 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { data } = await pokeApi.get<SmallPokemon[]>("pokemon");
-  // const pokemonPagination = paginationPokemons(data);
-
   return {
     props: { pokemons: data },
   };

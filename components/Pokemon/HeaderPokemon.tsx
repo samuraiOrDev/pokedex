@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { FC } from "react";
 import { toCapitalize } from "../../helpers";
 import { PokemonFilter } from "../../interfaces";
-Image;
 
 interface Props {
   pokemon: PokemonFilter;

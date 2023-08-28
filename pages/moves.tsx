@@ -9,7 +9,7 @@ const metadaData = {
 const Moves: NextPage = () => {
   return (
     <Layout title={metadaData.title} description={metadaData.description}>
-      <h1 style={{"textAlign": "center"}}>Pokemon | Moves</h1>
+      <h1 style={{ textAlign: "center" }}>Pokemon | Moves</h1>
     </Layout>
   );
 };

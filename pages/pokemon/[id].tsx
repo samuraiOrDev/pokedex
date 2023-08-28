@@ -47,7 +47,10 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
           </div>
         </div>
         {/* Container-abilities */}
-        <div className="container-abilities border-color-light-off" style={{"width": "100%"}}>
+        <div
+          className="container-abilities border-color-light-off"
+          style={{ width: "100%" }}
+        >
           <h2>Abilities</h2>
           <br />
           {abilities.map((ability: any) => (
@@ -71,8 +74,8 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
             </div>
             <h2>Weakness</h2>
             <div className="image-types">
-              {pokemon.dmg_relations.map((element:any, index: number) =>
-                element.map((element2:any, index2: number) => (
+              {pokemon.dmg_relations.map((element: any, index: number) =>
+                element.map((element2: any, index2: number) => (
                   <Image
                     key={index2}
                     src={`/icons/${element2.name}.svg`}
@@ -84,9 +87,6 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
               )}
             </div>
           </div>
-          {/* <div className="container-evolutions border-color-light-off">
-            Hola buenas noches
-          </div> */}
         </div>
       </div>
     </Layout>
@@ -94,13 +94,12 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const pokemonsArray = [...Array(3)].map((value, index) => `${index + 1}`);
+  const pokemonsArray = [...Array(151)].map((value, index) => `${index + 1}`);
   return {
     paths: pokemonsArray.map((id) => ({
       params: { id },
     })),
-    //fallback: false
-    fallback: "blocking",
+    fallback: false,
   };
 };
 
@@ -109,7 +108,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pokemon = await getPokemonInfo(id);
   let arrraTypesInfo = await getInfoTypes(pokemon as PokemonFilter);
   const objectPkm = { ...pokemon, dmg_relations: arrraTypesInfo };
-  // console.log({ objectPkm });
   if (!pokemon) {
     return {
       redirect: {
